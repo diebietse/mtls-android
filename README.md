@@ -1,5 +1,7 @@
 # mTLS Android Example App
 
+![build](https://github.com/diebietse/mtls-android/workflows/build/badge.svg)
+
 This is an example app that demonstrates how to do [Mutual TLS authentication (mTLS)][mtls] when
 using a [WebView][web-view] as well as when using [OkHttp][ok-http]
 
