@@ -1,5 +1,7 @@
 package com.diebietse.mtlsandroidexample
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -25,6 +27,11 @@ class MainFragment : Fragment() {
 
         view.findViewById<Button>(R.id.button_ok_http).setOnClickListener {
             findNavController().navigate(R.id.action_MainFragment_to_OkHttpFragment)
+        }
+
+        view.findViewById<Button>(R.id.button_source).setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://diebietse.com/mtls-android"))
+            startActivity(intent)
         }
     }
 }

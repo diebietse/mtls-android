@@ -10,6 +10,7 @@
     <string name="description">This app demonstrates how to support mTLS in an Android WebView and in OkHttp requests</string>
     <string name="open_web_view">Open mTLS WebView</string>
     <string name="ok_http_request">Do mTLS OkHttp Request</string>
+    <string name="view_source">View Source on GitHub</string>
 
     <!-- OkHttp Fragment -->
     <string name="download_client_certificate">Download client certificate</string>

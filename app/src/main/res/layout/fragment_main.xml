@@ -4,48 +4,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="32dp"
     tools:context=".MainFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="16dp" />
 
     <ImageView
         android:id="@+id/mtls_on"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/ic_mtls_on"
         android:contentDescription="@string/secure_icon"
+        android:src="@drawable/ic_mtls_on"
         app:layout_constraintBottom_toTopOf="@id/card_view"
         app:layout_constraintEnd_toStartOf="@id/mtls_off"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@id/start_margin"
+        app:layout_constraintTop_toBottomOf="@id/top_margin" />
 
     <ImageView
         android:id="@+id/mtls_off"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/ic_mtls_off"
         android:contentDescription="@string/insecure_icon"
-        app:layout_constraintBottom_toTopOf="@id/card_view"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_mtls_off"
+        app:layout_constraintEnd_toStartOf="@id/end_margin"
         app:layout_constraintStart_toEndOf="@id/mtls_on"
-        app:layout_constraintTop_toTopOf="@id/mtls_on"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@id/mtls_on" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
         app:cardCornerRadius="8dp"
+        app:contentPadding="8dp"
         app:layout_constraintBottom_toTopOf="@id/button_web_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mtls_on" >
+        app:layout_constraintEnd_toStartOf="@id/end_margin"
+        app:layout_constraintStart_toEndOf="@id/start_margin"
+        app:layout_constraintTop_toBottomOf="@id/mtls_on">
+
         <TextView
-            style="@style/TextAppearance.AppCompat.Headline"
             android:id="@+id/textview_first"
+            style="@style/TextAppearance.AppCompat.Headline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
             android:text="@string/description"
             android:textAlignment="center" />
     </androidx.cardview.widget.CardView>
@@ -54,6 +72,7 @@
         android:id="@+id/button_web_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:text="@string/open_web_view"
         app:layout_constraintBottom_toTopOf="@id/button_ok_http"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,9 +83,19 @@
         android:id="@+id/button_ok_http"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:text="@string/ok_http_request"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/button_source"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_web_view" />
+
+    <Button
+        android:id="@+id/button_source"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/view_source"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
