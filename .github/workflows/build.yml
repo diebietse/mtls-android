@@ -1,0 +1,30 @@
+name: build
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: verify
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+
+      - name: Run Android Linter
+        run: |
+          chmod +x gradlew
+          ./gradlew lintDebug
+
+      - name: Assemble Debug APK
+        run: ./gradlew assembleDebug
+
+      - name: Archive APK
+        uses: actions/upload-artifact@v2
+        with:
+          name: MtlsAndroidExample
+          path: app/build/outputs/apk/debug/app-debug.apk
