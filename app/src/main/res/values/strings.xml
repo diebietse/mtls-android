@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">mTLS Example</string>
+
+    <!-- Navigation -->
+    <string name="home_fragment_label">Home Fragment</string>
+    <string name="web_view_fragment_label">WebView Fragment</string>
+    <string name="ok_http_fragment_label" >OkHttp Fragment</string>
+
+    <!-- Main Fragment -->
+    <string name="description">This app demonstrates how to support mTLS in an Android WebView and in OkHttp requests</string>
+    <string name="open_web_view">Open mTLS WebView</string>
+    <string name="ok_http_request">Do mTLS OkHttp Request</string>
+
+    <!-- OkHttp Fragment -->
+    <string name="download_client_certificate">Download client certificate</string>
+
+    <!-- Content Descriptions -->
+    <string name="secure_icon">Secure Icon</string>
+    <string name="insecure_icon">Insecure Icon</string>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.diebietse.mtlsandroidexample.MainFragment"
+        android:label="@string/home_fragment_label"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action_MainFragment_to_WebViewFragment"
+            app:destination="@id/WebViewFragment" />
+        <action
+            android:id="@+id/action_MainFragment_to_OkHttpFragment"
+            app:destination="@id/OkHttpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/WebViewFragment"
+        android:name="com.diebietse.mtlsandroidexample.WebViewFragment"
+        android:label="@string/web_view_fragment_label"
+        tools:layout="@layout/fragment_web_view">
+    </fragment>
+    <fragment
+        android:id="@+id/OkHttpFragment"
+        android:name="com.diebietse.mtlsandroidexample.OkHttpFragment"
+        android:label="@string/ok_http_fragment_label"
+        tools:layout="@layout/fragment_ok_http" >
+    </fragment>
+</navigation>
