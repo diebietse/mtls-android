@@ -1,17 +1,19 @@
 package com.diebietse.mtlsandroidexample
 
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
-import kotlinx.android.synthetic.main.activity_main.*
+import com.diebietse.mtlsandroidexample.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.setHomeButtonEnabled(true)
 
         val navController = Navigation.findNavController(this, R.id.nav_host_fragment)
